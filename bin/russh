@@ -4,4 +4,4 @@
 
 $LOAD_PATH.unshift(File.dirname(File.realpath(__FILE__)) + '/../lib')
 require 'russh'
-Russh::Cli.new.run if $0 == __FILE__
+Russh::Cli.new.run
