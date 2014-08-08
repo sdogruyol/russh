@@ -37,8 +37,8 @@ module Russh
       if is_readable? && is_writable?
         backup
         open(@path, 'a') do |f|
-          f.puts "Hostname #{@host}"
-          f.puts "  Host#{@host_name}"
+          f.puts "Host #{@host}"
+          f.puts "  HostName #{@host_name}"
           f.puts "  User #{@user}"
         end
       end
