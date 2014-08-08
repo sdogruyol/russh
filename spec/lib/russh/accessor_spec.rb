@@ -1,10 +1,26 @@
 require 'spec_helper'
 
-describe Russh::Reader do
-  it 'should be able to read .ssh/config' do
-    subject.is_readable?.should == true
+describe Russh::Accessor do
+
+  context 'accessing' do
+    it 'should be able to read .ssh/config' do
+      subject.is_readable?.should == true
+    end
+    it 'should be able to write .ssh/config' do
+      subject.is_writable?.should == true
+    end
   end
-  it 'should be able to write .ssh/config' do
-    subject.is_writable?.should == true
+
+  context 'backup' do
+    it 'should copy the original config' do
+      original_file = subject.read
+      File.read(subject.path + '.bk').should == original_file
+    end
+  end
+
+  context 'reading' do
+    it 'should be able to get the file content' do
+      subject.read.should_not == nil
+    end
   end
 end
