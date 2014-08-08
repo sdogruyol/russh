@@ -23,4 +23,10 @@ describe Russh::Accessor do
       subject.read.should_not == nil
     end
   end
+
+  context 'writing' do
+    it 'should be able to create a new host' do
+
+    end
+  end
 end

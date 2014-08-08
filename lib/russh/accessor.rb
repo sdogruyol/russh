@@ -1,3 +1,5 @@
+require 'commander'
+
 module Russh
   class Accessor
     attr_reader :path
@@ -26,6 +28,12 @@ module Russh
       if is_readable?
         File.read @path
       end
+    end
+
+    def create
+      @host = ask 'Host'
+      @host_name = ask 'HostName'
+      @user = ask 'User'
     end
   end
 end
