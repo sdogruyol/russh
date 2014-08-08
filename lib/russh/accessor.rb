@@ -34,6 +34,14 @@ module Russh
       @host = ask 'Host'
       @host_name = ask 'HostName'
       @user = ask 'User'
+      if is_readable? && is_writable?
+        backup
+        open(@path, 'a') do |f|
+          f.puts "Hostname #{@host}"
+          f.puts "  Host#{@host_name}"
+          f.puts "  User #{@user}"
+        end
+      end
     end
   end
 end

@@ -1,5 +1,6 @@
 require 'commander'
-require 'russh/accessor'
+require_relative 'accessor'
+require_relative 'version'
 
 module Russh
   class Cli
@@ -7,19 +8,17 @@ module Russh
 
     def run
       program :name, 'Rrush'
-      program :version, '0.0.1'
+      program :version, VERSION
       program :description, 'SSH Config Manager For Ruby'
 
       command :create do |c|
         c.syntax = 'russh create'
         c.description = 'Creates a new host'
         c.action do |args, options|
-
+          Accessor.new.create
         end
       end
       run!
     end
   end
 end
-
-Russh::Cli.new.run if $0 == __FILE__

@@ -1,6 +1,6 @@
 # Russh
 
-TODO: Write a gem description
+**Russh =** Ruby + SSH . SSH Config Manager for Ruby.
 
 ## Installation
 

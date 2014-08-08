@@ -1,1 +1,2 @@
-require "russh/version"
+require 'russh/version'
+require 'russh/cli'
