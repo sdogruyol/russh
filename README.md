@@ -1,24 +1,21 @@
 # Russh
 
-**Russh =** Ruby + SSH . SSH Config Manager for Ruby.
+**Russh =** Ruby + SSH . SSH Config Manager for Ruby. It helps you manage your SSH configuration.
+
+You can create, delete and update your existing configuration.
+
+Currently under heavy development.
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'russh'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
 
     $ gem install russh
 
 ## Usage
 
-TODO: Write usage instructions here
+### Create a new configuration
+
+    russh create
+
 
 ## Contributing
 

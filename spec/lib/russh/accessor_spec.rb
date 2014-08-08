@@ -14,6 +14,7 @@ describe Russh::Accessor do
   context 'backup' do
     it 'should copy the original config' do
       original_file = subject.read
+      subject.backup
       File.read(subject.path + '.bk').should == original_file
     end
   end
