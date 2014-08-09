@@ -18,6 +18,8 @@ module Russh
         c.option '--host STRING', String, 'Host Address'
         c.option '--user STRING', String, 'Username'
         c.action do |args, options|
+          raise ArgumentError.new("Alias is required!") unless options.alias
+          raise ArgumentError.new("Host is required!") unless options.host
           Accessor.new.create options.alias, options.host, options.user
         end
       end
