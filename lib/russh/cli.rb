@@ -7,15 +7,18 @@ module Russh
     include Commander::Methods
 
     def run
-      program :name, 'Rrush'
+      program :name, 'Russh'
       program :version, VERSION
       program :description, 'SSH Config Manager For Ruby'
 
       command :create do |c|
-        c.syntax = 'russh create'
+        c.syntax = 'russh create [options]'
         c.description = 'Creates a new host'
+        c.option '--alias STRING', String, 'Host Alias'
+        c.option '--host STRING', String, 'Host Address'
+        c.option '--user STRING', String, 'Username'
         c.action do |args, options|
-          Accessor.new.create
+          Accessor.new.create options.alias, options.host, options.user
         end
       end
       run!

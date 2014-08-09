@@ -52,11 +52,11 @@ module Russh
       end
     end
 
-    def create
+    def create(host, host_name, user)
       # Ask the user for input
-      @host = ask 'Host'
-      @host_name = ask 'HostName'
-      @user = ask 'User'
+      @host = host
+      @host_name = host_name
+      @user = user
       # Check for read and write access
       if is_readable? && is_writable?
         backup
