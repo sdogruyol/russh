@@ -14,8 +14,11 @@ Currently under heavy development.
 
 ### Create a new configuration
 
-    russh create
+    russh create --alias host1 --host www.example.com --username ubuntu
 
+### Backup
+
+    russh backup
 
 ## Contributing
 
