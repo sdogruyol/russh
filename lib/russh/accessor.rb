@@ -26,7 +26,7 @@ module Russh
       begin
         @is_readable = File.readable? @path
       rescue => e
-        puts "Couldn't be able to read your ssh config: Error #{e}"
+        puts "Couldn't read your ssh config: Error #{e}"
       end
     end
 
@@ -35,7 +35,7 @@ module Russh
       begin
         @is_writable = File.writable? @path
       rescue => e
-        puts "Couldn't be able to write your ssh config: Error #{e}"
+        puts "Couldn't write to your ssh config: Error #{e}"
       end
     end
 
