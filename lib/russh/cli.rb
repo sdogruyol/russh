@@ -27,7 +27,7 @@ module Russh
       command :backup do |c|
         c.syntax = 'russh backup'
         c.description = 'Backups your ssh config'
-        c.action do |args, options|
+        c.action do
           Accessor.new.backup
         end
       end
