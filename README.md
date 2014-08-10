@@ -16,9 +16,13 @@ Currently under heavy development.
 
 ### Create a new configuration
 
+Creates a new configuration for an alias.
+
     russh create --alias host1 --host www.example.com --username ubuntu
 
 ### Backup
+
+Backups your entire .ssh/config file.
 
     russh backup
 
