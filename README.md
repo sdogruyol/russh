@@ -1,5 +1,7 @@
 # Russh
 
+[![Gem Version](https://badge.fury.io/rb/russh.svg)](http://badge.fury.io/rb/russh)
+
 **Russh =** Ruby + SSH . SSH Config Manager for Ruby. It helps you manage your SSH configuration.
 
 You can create, delete and update your existing configuration.
@@ -14,9 +16,13 @@ Currently under heavy development.
 
 ### Create a new configuration
 
+Creates a new configuration for an alias.
+
     russh create --alias host1 --host www.example.com --username ubuntu
 
 ### Backup
+
+Backups your entire .ssh/config file.
 
     russh backup
 
