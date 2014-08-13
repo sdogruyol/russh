@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Russh::Accessor do
-  let(:path){ }
 
   context 'accessing' do
     it 'should be able to read .ssh/config' do
@@ -14,9 +13,8 @@ describe Russh::Accessor do
 
   context 'backup' do
     it 'should copy the original config' do
-      original_file = subject.read
       subject.backup
-      File.read( + '.bk').should == original_file
+      File.read( subject.path + '.bk').should == subject.read
     end
   end
 
@@ -28,7 +26,10 @@ describe Russh::Accessor do
 
   context 'writing' do
     it 'should be able to create a new host' do
-
+      subject.stub(:backup)
+      subject.create('host', 'example.com', 'user')
+      File.exist?(subject.path).should == true
     end
   end
+
 end
