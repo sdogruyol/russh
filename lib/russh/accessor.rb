@@ -53,7 +53,6 @@ module Russh
     end
 
     def create(host, host_name, user)
-      # Ask the user for input
       @host = host
       @host_name = host_name
       @user = user

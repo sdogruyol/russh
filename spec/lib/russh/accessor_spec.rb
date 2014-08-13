@@ -28,8 +28,7 @@ describe Russh::Accessor do
 
   context 'writing' do
     it 'should be able to create a new host' do
-      original_file = subject.read
-      subject.create('host1', 'www.sample.com', 'user1')
+
     end
   end
 end
