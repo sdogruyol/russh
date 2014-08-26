@@ -2,8 +2,6 @@ require 'commander'
 
 module Russh
   class Accessor
-    attr_reader :path
-
     def initialize
       @path = Dir.home + '/.ssh/config'
       @is_existing = is_existing?
