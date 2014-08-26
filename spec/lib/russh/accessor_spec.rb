@@ -14,25 +14,10 @@ describe Russh::Accessor do
 
   subject { TestAccessor.new }
 
-  context 'accessing' do
-    it 'should be able to read .ssh/config' do
-      subject.is_readable?.should == true
-    end
-    it 'should be able to write .ssh/config' do
-      subject.is_writable?.should == true
-    end
-  end
-
   context 'backup' do
     it 'should copy the original config' do
       subject.backup
       File.read(subject.path + '.bk').should == File.read(subject.path)
-    end
-  end
-
-  context 'reading' do
-    it 'should be able to get the file content' do
-      subject.read.should_not == nil
     end
   end
 
