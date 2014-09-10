@@ -1,4 +1,5 @@
 require 'commander'
+require 'net/ssh'
 
 module Russh
   class Accessor
@@ -33,6 +34,24 @@ module Russh
         # Format each entry
         f.puts format_entry
       end
+    end
+
+    def list
+      hosts = []
+      configs = []
+
+      File.readlines(@path).each do |line|
+        hosts << line.split(' ')[1].strip if line[/^Host/]
+      end
+
+      hosts.each do |host|
+         configs.push Net::SSH::Config.load @path, host
+      end
+
+      configs.each do |config|
+        p "Host #{config['host']} HostName #{config['hostname']} User #{config['user']}"
+      end
+
     end
 
     protected
