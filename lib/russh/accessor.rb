@@ -49,7 +49,7 @@ module Russh
       end
 
       configs.each do |config|
-        p "Host #{config['host']} HostName #{config['hostname']} User #{config['user']}"
+        puts "Host #{config['host']} HostName #{config['hostname']} User #{config['user']}"
       end
 
     end

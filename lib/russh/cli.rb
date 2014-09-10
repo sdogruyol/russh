@@ -32,6 +32,14 @@ module Russh
         end
       end
 
+      command :list do |c|
+        c.syntax = 'russh list'
+        c.description = 'Lists all the entries in your ssh config'
+        c.action do
+          Accessor.new.list
+        end
+      end
+
       run!
     end
   end

@@ -33,7 +33,7 @@ describe Russh::Accessor do
       subject.stub(:backup)
       subject.create('test1', 'test1.com', 'serdar')
       subject.create('test2', 'test2.com', 'serkan')
-      expected_output = "\"Host test1 HostName test1.com User serdar\"\n\"Host test2 HostName test2.com User serkan\"\n"
+      expected_output = "Host test1 HostName test1.com User serdar\nHost test2 HostName test2.com User serkan\n"
       expect{ subject.list }.to output(expected_output).to_stdout
     end
   end
