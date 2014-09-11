@@ -13,7 +13,7 @@ module Russh
       if File.exist? @path
         @is_existing = true
       else
-        puts "You don't have an existing ssh config file. Creating a new one for you."
+        puts "You don't have an existing ssh config file. Creating a new one for you at ~/.ssh/config."
         File.new(@path, 'w')
       end
     end
@@ -43,11 +43,11 @@ module Russh
       File.readlines(@path).each do |line|
         hosts << line.split(' ')[1].strip if line[/^Host/]
       end
-
+      # Read the config for each host
       hosts.each do |host|
          configs.push Net::SSH::Config.load @path, host
       end
-
+      # This needs better formatting
       configs.each do |config|
         puts "Host #{config['host']} HostName #{config['hostname']} User #{config['user']}"
       end
